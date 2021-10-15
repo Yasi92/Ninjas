@@ -1,6 +1,6 @@
 import os
 # We are impoting Flask class from flask package
-from flask import Flask
+from flask import Flask, render_template
 
 #  This is an instance of using this class and storing it in a variable called app.
 #  The first arg is the name of the application's module - our package.
@@ -13,8 +13,21 @@ app = Flask(__name__)
 #  with "/" we try to browse to the root directory.
 @app.route("/")
 def index():
-    return "Hello, World"
+    return render_template("index.html")
 
+
+@app.route("/about")
+def about():
+    return render_template("about.html")    
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")   
+
+
+@app.route("/career")
+def career():
+    return render_template("career.html") 
 
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Flask</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- We are calling url_for func to look up index view in py
+            file and injects the content inside it. -->
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('career') }}">Career</a></li>
+        </ul>
+    </nav>
+    <!-- the word content could be anything else  -->
+    {% block content %}
+    {% endblock %}
+
+     
+</body>
+</html>
