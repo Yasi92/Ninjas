@@ -19,7 +19,7 @@
             {% if loop.index % 2 != 0 %}
                 <div class="col-md-7">
                     <!-- loop.index is automatically generated from the the loop we created above for the members -->
-                    <h3>{{ loop.index }}. {{ member.name }}</h3>
+                    <h3><a href= "/about/{{ member.url }}" >{{ loop.index }}. {{ member.name }}</a></h3>
                     <p>{{ member.description }}</p>
                 </div>
                 <div class="col-md-5">
@@ -32,7 +32,9 @@
                 </div>
                 <div class="col-md-7">
                     <!-- loop.index is automatically generated from the the loop we created above for the members -->
-                    <h3>{{ loop.index }}. {{ member.name }}</h3>
+                    <!-- or we could set the nex line as follows: but we did not use this because of the url "thorin" -->
+                    <!-- <h3><a href= "/about/{{ member.name|replace(' ', '-')|replace('&', 'and')|replace('Ó', 'o')|lower }}" >{{ loop.index }}. {{ member.name }}</a></h3> -->
+                    <h3><a href= "/about/{{ member.url }}" >{{ loop.index }}. {{ member.name }}</a></h3>
                     <p>{{ member.description }}</p>
                 </div>
 
