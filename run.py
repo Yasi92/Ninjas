@@ -1,7 +1,7 @@
 import os
 import json
 # We are impoting Flask class from flask package
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 #  This is an instance of using this class and storing it in a variable called app.
 #  The first arg is the name of the application's module - our package.
@@ -27,7 +27,7 @@ def about():
 
 """
 the member_name here in angle brackets will be passed into the view.
-meaning that everythin that comes after /about/ will be passed as an arg into the view named about_member.
+meaning that anything that comes after /about/ will be passed as an arg into the view named about_member.
 """
 
 # If the url of the obj is equal to the name that comes after /about/ (member_name), then turn that object into a dict called member.
@@ -43,7 +43,7 @@ def about_member(member_name):
 
 
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
     return render_template("contact.html", page_title="Contact")   
 
